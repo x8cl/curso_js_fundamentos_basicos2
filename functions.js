@@ -61,15 +61,13 @@ console.log(contarPositivos([-1,5,-4,10,-11,6]));
 
 /* Pares e Impares */
 function parEimp(arr){
-    var salida = ("no hay 3 pares o impares consecutivos....");
-    for (var i = 0; i < arr.length; i++){
-        if (arr[i]%2 == 0 && arr[1]%2 == arr[i+1]%2 && arr[i]%2 == arr[i+2]%2){
-            salida = ("¡Es para bien!"); 
+    for (var i = 0; i < arr.length-2; i++){
+        if (arr[i]%2 == 0 && arr[i+1]%2 == 0 && arr[i+2]%2 == 0){
+            console.log("¡Es para bien!"); 
         }
-        if (arr[i]%2 ==! 0 && arr[1]%2 == arr[i+1]%2 && arr[i]%2 == arr[i+2]%2){
-            salida = ("¡Qué imparcial!"); 
+        if (arr[i]%2 ==! 0 && arr[i+1]%2 ==! 0 && arr[i+2]%2 ==! 0){
+            console.log("¡Qué imparcial!"); 
         }
     }
-    return salida; 
 }
-console.log(parEimp([5,3,15,2,4,6,3]));
+parEimp([5,3,15,2,4,6,3]);
