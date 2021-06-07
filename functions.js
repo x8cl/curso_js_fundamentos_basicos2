@@ -14,7 +14,7 @@ console.log(posAbig([-1,3,5,-5]));
 /* Imprime (print) el menor, devuelve (return) el mayor */
 function pmenYrmay(arr){
     var max = Math.max.apply(null,arr);
-    var min = Math.min.apply(null, arr);
+    var min = Math.min.apply(null,arr);
     console.log(min);
     return max;
 }
@@ -49,7 +49,7 @@ function contarPositivos(arr){
     var sum = 0;
     for (var i = 0; i < arr.length; i++){
         if (arr[i] > 0){
-            sum = sum + arr[i];
+            sum++;
         }    
     }
     arr.splice((arr.length-1), 1, (sum));
@@ -61,14 +61,15 @@ console.log(contarPositivos([-1,5,-4,10,-11,6]));
 
 /* Pares e Impares */
 function parEimp(arr){
-    var salida = 0;
+    var salida = ("no hay 3 pares o impares consecutivos....");
     for (var i = 0; i < arr.length; i++){
-        if ((arr[i]) %2 === (arr[i+1]) %2){
-            salida = ("¡Qué imparcial!");
-        }    
+        if (arr[i]%2 == 0 && arr[1]%2 == arr[i+1]%2 && arr[i]%2 == arr[i+2]%2){
+            salida = ("¡Es para bien!"); 
+        }
+        if (arr[i]%2 ==! 0 && arr[1]%2 == arr[i+1]%2 && arr[i]%2 == arr[i+2]%2){
+            salida = ("¡Qué imparcial!"); 
+        }
     }
-    /* arr.splice((arr.length-1), 1, (sum)); */
-    return salida;
+    return salida; 
 }
-
-console.log(parEimp([2,2,1,2]));
+console.log(parEimp([5,3,15,2,4,6,3]));
